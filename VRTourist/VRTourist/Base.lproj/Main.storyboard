@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ftq-my-gGQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-710" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--Virtual Tourist-->
         <scene sceneID="NeU-lj-e8j">
             <objects>
                 <viewController id="5kM-cc-9Qi" sceneMemberID="viewController">
@@ -47,11 +47,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p59-JS-FbE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OTM-tO-riy"/>
+                    <navigationItem key="navigationItem" title="Virtual Tourist" id="OTM-tO-riy"/>
+                    <connections>
+                        <segue destination="hXY-jc-V3d" kind="push" id="b2D-lo-UZ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GB7-8f-ljB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218.40000000000001" y="79.610194902548727"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PIs-q6-qQh">
+            <objects>
+                <viewController id="hXY-jc-V3d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KSQ-BJ-vlH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aD9-Ep-lgk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y3G-jI-ZlC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dn-bO-5VP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1166" y="78"/>
         </scene>
     </scenes>
 </document>
