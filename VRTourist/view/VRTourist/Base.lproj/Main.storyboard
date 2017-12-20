@@ -50,7 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="OTM-tO-riy"/>
                     <connections>
-                        <segue destination="hXY-jc-V3d" kind="push" id="b2D-lo-UZ9"/>
+                        <segue destination="hXY-jc-V3d" kind="show" identifier="SG" id="b2D-lo-UZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GB7-8f-ljB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,29 +84,35 @@
                                 <rect key="frame" x="0.0" y="264" width="375" height="359"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Un9-an-c9Z">
-                                    <size key="itemSize" width="126" height="95"/>
+                                    <size key="itemSize" width="126" height="114"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="if9-fm-Slt" userLabel="cell">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="95"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="126" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-g0-Htp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="95"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="114"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sWp-Jh-xi5">
+                                                    <rect key="frame" x="53" y="47" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="sWp-Jh-xi5" firstAttribute="top" secondItem="9Dz-g0-Htp" secondAttribute="bottom" constant="-67" id="5mj-J0-CeV"/>
                                             <constraint firstAttribute="trailing" secondItem="9Dz-g0-Htp" secondAttribute="trailing" id="9fP-jT-qCj"/>
                                             <constraint firstAttribute="bottom" secondItem="9Dz-g0-Htp" secondAttribute="bottom" id="Dbt-O7-3qm"/>
                                             <constraint firstItem="9Dz-g0-Htp" firstAttribute="leading" secondItem="if9-fm-Slt" secondAttribute="leading" id="q6z-a2-0yO"/>
+                                            <constraint firstItem="sWp-Jh-xi5" firstAttribute="leading" secondItem="9Dz-g0-Htp" secondAttribute="trailing" constant="-73" id="tj3-mf-1d3"/>
                                             <constraint firstItem="9Dz-g0-Htp" firstAttribute="top" secondItem="if9-fm-Slt" secondAttribute="topMargin" constant="-8" id="v40-v2-v0N"/>
+                                            <constraint firstItem="sWp-Jh-xi5" firstAttribute="centerX" secondItem="9Dz-g0-Htp" secondAttribute="centerX" id="xZw-3k-2xT"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>

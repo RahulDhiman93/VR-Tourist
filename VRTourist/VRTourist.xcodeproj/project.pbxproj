@@ -81,6 +81,7 @@
 		089235541FEACC570091E8E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -139,7 +140,6 @@
 				08D595821FE97B9B001E5737 /* Assets.xcassets */,
 				089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */,
 				08D595841FE97B9B001E5737 /* LaunchScreen.storyboard */,
-				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 				08D595871FE97B9B001E5737 /* Info.plist */,
 			);
 			path = VRTourist;
