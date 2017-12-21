@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		086B10231FEC30B80013CDF4 /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10221FEC30B80013CDF4 /* Pin+CoreDataClass.swift */; };
 		086B10251FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */; };
+		086B10271FEC34050013CDF4 /* Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */; };
+		086B10291FEC34310013CDF4 /* Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */; };
 		089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */; };
 		0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */; };
 		0892355E1FEACE640091E8E3 /* network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892355D1FEACE640091E8E3 /* network.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		086B10221FEC30B80013CDF4 /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
 		086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataClass.swift"; sourceTree = "<group>"; };
+		086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
 		0892355A1FEACCBD0091E8E3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0892355D1FEACE640091E8E3 /* network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = network.swift; sourceTree = "<group>"; };
@@ -90,9 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				08F47F421FEC113A00BA3ABA /* CoreDataStack.swift */,
-				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 				086B10221FEC30B80013CDF4 /* Pin+CoreDataClass.swift */,
 				086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */,
+				086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */,
+				086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */,
+				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -309,12 +315,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086B10271FEC34050013CDF4 /* Images+CoreDataClass.swift in Sources */,
 				089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */,
 				086B10251FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift in Sources */,
 				08D5957C1FE97B9B001E5737 /* AppDelegate.swift in Sources */,
 				086B10231FEC30B80013CDF4 /* Pin+CoreDataClass.swift in Sources */,
 				0892355E1FEACE640091E8E3 /* network.swift in Sources */,
 				08F47F431FEC113A00BA3ABA /* CoreDataStack.swift in Sources */,
+				086B10291FEC34310013CDF4 /* Images+CoreDataProperties.swift in Sources */,
 				0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */,
 				08F47F411FEC10DB00BA3ABA /* FetchViewController.swift in Sources */,
 			);
