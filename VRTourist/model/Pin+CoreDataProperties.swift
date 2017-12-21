@@ -15,8 +15,8 @@ extension Pin{
         return NSFetchRequest<Pin>(entityName: "Pin")
     }
     
-    @NSManaged public var long: Double
-    @NSManaged public var lat: Double
+    @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
     @NSManaged public var page: Int32
     @NSManaged public var image: NSSet?
     
@@ -24,8 +24,8 @@ extension Pin{
         if let entit = NSEntityDescription.entity(forEntityName: "Pin", in: context)
         {
             self.init(entity: entit, insertInto:context)
-            self.lat = latitude
-            self.long = longitude
+            self.latitude = latitude
+            self.longitude = longitude
             self.page = 1
         }
         else{

@@ -15,6 +15,7 @@
 		086B10311FEC3C410013CDF4 /* FlickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10301FEC3C410013CDF4 /* FlickerViewController.swift */; };
 		086B10331FEC3CB40013CDF4 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */; };
 		086B10351FEC45A00013CDF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */; };
+		086B10371FEC50280013CDF4 /* OriginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10361FEC50280013CDF4 /* OriginViewController.swift */; };
 		089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */; };
 		0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */; };
 		0892355E1FEACE640091E8E3 /* network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892355D1FEACE640091E8E3 /* network.swift */; };
@@ -54,6 +55,7 @@
 		086B10301FEC3C410013CDF4 /* FlickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerViewController.swift; sourceTree = "<group>"; };
 		086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		086B10361FEC50280013CDF4 /* OriginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginViewController.swift; sourceTree = "<group>"; };
 		089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
 		0892355A1FEACCBD0091E8E3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0892355D1FEACE640091E8E3 /* network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = network.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				086B10301FEC3C410013CDF4 /* FlickerViewController.swift */,
 				086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */,
 				086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */,
+				086B10361FEC50280013CDF4 /* OriginViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */,
 				086B10251FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift in Sources */,
 				08D5957C1FE97B9B001E5737 /* AppDelegate.swift in Sources */,
+				086B10371FEC50280013CDF4 /* OriginViewController.swift in Sources */,
 				086B10311FEC3C410013CDF4 /* FlickerViewController.swift in Sources */,
 				086B10231FEC30B80013CDF4 /* Pin+CoreDataClass.swift in Sources */,
 				0892355E1FEACE640091E8E3 /* network.swift in Sources */,

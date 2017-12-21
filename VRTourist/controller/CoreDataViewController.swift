@@ -39,7 +39,7 @@ class CoreDataViewController: UIViewController,UICollectionViewDelegate {
         }
     }
     
-    func numberOfSection(_ collectionView: UICollectionView) -> Int{
+    func numberOfSectionInCollectionView(_ collectionView: UICollectionView) -> Int{
         if let cnt = self.fetchedResultsController{
             return (cnt.sections?.count)!
         }
@@ -48,7 +48,7 @@ class CoreDataViewController: UIViewController,UICollectionViewDelegate {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)->Int{
+    @objc func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int)->Int{
         if let SC = self.fetchedResultsController!.sections{
             return SC[section].numberOfObjects
         }

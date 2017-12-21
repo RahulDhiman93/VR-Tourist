@@ -16,6 +16,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     @IBOutlet var NC: UIButton!
     
     
+    
     var annotations = [MKPointAnnotation]()
     var pp: Pin!
     
@@ -44,12 +45,16 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        
+       // print("i am here")
         
         let frr = NSFetchRequest<Images>(entityName:"Images")
-        frr.sortDescriptors = [NSSortDescriptor(key: "Pin",ascending: true)]
-        let pred = NSPredicate(format: "Pin = %@", argumentArray:[self.pp])
+        
+       // print("yoooooo")
+        frr.sortDescriptors = [NSSortDescriptor(key:"pin",ascending: true)]
+        //print("what")
+       let pred = NSPredicate(format: "pin = %@", argumentArray:[self.pp])
         frr.predicate = pred
+        //print("hmmmmm")
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: frr, managedObjectContext: (delegate.stack.context), sectionNameKeyPath: nil, cacheName: nil)
         self.fetchedResultsController?.delegate = self
@@ -73,6 +78,8 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        print("In collection baby")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
         cell.ind.isHidden = false
@@ -107,7 +114,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
         let flicker  = FlickerImage()
         
         
-        flicker.get(latitude: self.pp.lat, longitude: self.pp.long, page: Int32(arc4random_uniform(50)), completion: {
+        flicker.get(latitude: self.pp.latitude, longitude: self.pp.longitude, page: Int32(arc4random_uniform(50)), completion: {
             error , urlarray in
             if error != nil
             {
@@ -152,10 +159,10 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     
     func setUp()
     {   mapScene.isUserInteractionEnabled = false
-        self.NC.isEnabled = false
+        self.NC.isEnabled = true
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        let cords2d = CLLocationCoordinate2D(latitude: (self.pp?.lat)!, longitude: (self.pp?.long)!)
+       let cords2d = CLLocationCoordinate2D(latitude: (self.pp?.latitude)!, longitude: (self.pp?.longitude)!)
         let annoat = MKPointAnnotation()
         annoat.coordinate = cords2d
         mapScene.addAnnotations([annoat])

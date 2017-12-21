@@ -20,7 +20,7 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
     
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>?
     
-    let fetchedResultt = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
+    let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,9 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
         
     }
     
-    @objc func PinIT(_ pressure : UILongPressGestureRecognizer)
+    @objc func pinIT(_ pressure : UILongPressGestureRecognizer)
     {
+        //print("111fdvfvdfbjbjbjbjsbRRRRRRRRRR")
         if pressure.state == UIGestureRecognizerState.began
         {
             let location = pressure.location(in: mapview)
@@ -47,14 +48,15 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
     
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
+        //print("RRRRRRRRRRRRRRRRRRRRRRR")
         var ppoint: NSManagedObject!
-        let pp1 = NSPredicate(format: "lat = %@",argumentArray:[(view.annotation?.coordinate.latitude)!])
-        let pp2 = NSPredicate(format: "long = %@",argumentArray:[(view.annotation?.coordinate.longitude)!])
+        let pp1 = NSPredicate(format: "latitude = %@",argumentArray:[(view.annotation?.coordinate.latitude)!])
+        let pp2 = NSPredicate(format: "longitude = %@",argumentArray:[(view.annotation?.coordinate.longitude)!])
         let FetchedResult2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
         let PredicateR = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [pp1,pp2])
         
         FetchedResult2.predicate = PredicateR
-        FetchedResult2.sortDescriptors = [NSSortDescriptor(key: "lat",ascending: true)]
+        FetchedResult2.sortDescriptors = [NSSortDescriptor(key: "latitude",ascending: true)]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: FetchedResult2, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -65,14 +67,15 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
             ppoint = object[0]
         })
         
-        mapView.deselectAnnotation(view.annotation, animated: false)
-        performSegue(withIdentifier: "SG", sender: ppoint)
+        mapview.deselectAnnotation(view.annotation, animated: false)
+       // print("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")
+        performSegue(withIdentifier:"sg", sender: ppoint)
     }
     
     override func prepare(for segue:UIStoryboardSegue, sender: Any?){
         
-      //  let sg = segue.destination as! FlickerViewController
-        // sg.point = sender as! PIN
+       let sg = segue.destination as! FlickerViewController
+        sg.pp = sender as! Pin
         
         
     }
@@ -82,9 +85,9 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
 extension MapSceneViewController {
    
     func loadData(){
-        fetchedResultt.sortDescriptors = [NSSortDescriptor(key: "lat", ascending: false),NSSortDescriptor(key: "long",ascending: true)]
+        fr.sortDescriptors = [NSSortDescriptor(key: "latitude", ascending:false),NSSortDescriptor(key: "longitude",ascending: true)]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedResultt, managedObjectContext: stack.context, sectionNameKeyPath:nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: stack.context, sectionNameKeyPath:nil, cacheName: nil)
         
         fetchDue(fetchedResultsController: fetchedResultsController, completion: {
             
@@ -98,7 +101,7 @@ extension MapSceneViewController {
                 for a in p
                 {
                     let anno = MKPointAnnotation()
-                    anno.coordinate = CLLocationCoordinate2D(latitude: a.lat, longitude: a.long)
+                    anno.coordinate = CLLocationCoordinate2D(latitude: a.latitude, longitude: a.longitude)
                     an.append(anno)
                 }
                 
@@ -115,9 +118,9 @@ extension MapSceneViewController {
     
     func setUp(){
         mapview.delegate = self
-        let pressure = UILongPressGestureRecognizer(target:self, action: #selector(PinIT(_:)))
+        let pressure = UILongPressGestureRecognizer(target: self, action: #selector(pinIT(_:)))
         pressure.delegate = self
-        pressure.minimumPressDuration = 0.7
+        pressure.minimumPressDuration = 0.8
         pressure.allowableMovement = 1
         mapview.addGestureRecognizer(pressure)
     }
