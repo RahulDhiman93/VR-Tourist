@@ -70,11 +70,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="192"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bP-jN-qyj">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="136" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="od2-Po-gaz">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="slq-Mx-Baw">
-                                            <rect key="frame" x="16" y="7" width="104" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="343" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="New Collection"/>
                                         </button>

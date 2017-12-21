@@ -37,15 +37,15 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
             let cc = mapview.convert(location, toCoordinateFrom: mapview)
             let Ann = MKPointAnnotation()
             Ann.coordinate = cc
-          //  let _ = PIN(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
+           // let _ = Pin(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
             try! stack.saveContext()
-            //loadData()
+            loadData()
             
             
         }
     }
     
-    public func MapScene(_ mapView: MKMapView, didSelect view: MKAnnotationView)
+    public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
         var ppoint: NSManagedObject!
         let pp1 = NSPredicate(format: "lat = %@",argumentArray:[(view.annotation?.coordinate.latitude)!])
@@ -58,12 +58,12 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: FetchedResult2, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
-      /*  fetchDue(fetchedResultsController: fetchedResultsController, completion: {
+       fetchDue(fetchedResultsController: fetchedResultsController, completion: {
             
      
             let object = fetchedResultsController?.fetchedObjects as! [NSManagedObject]
             ppoint = object[0]
-        })*/
+        })
         
         mapView.deselectAnnotation(view.annotation, animated: false)
         performSegue(withIdentifier: "SG", sender: ppoint)
@@ -86,7 +86,27 @@ extension MapSceneViewController {
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedResultt, managedObjectContext: stack.context, sectionNameKeyPath:nil, cacheName: nil)
         
-        
+        fetchDue(fetchedResultsController: fetchedResultsController, completion: {
+            
+            let p:[Pin] = fetchedResultsController?.fetchedObjects as! [Pin]
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                
+                var an = [MKPointAnnotation]()
+                for a in p
+                {
+                    let anno = MKPointAnnotation()
+                    //  anno.coordinate = CLLocationCoordinate2D(latitude: a.lat, longtitude: a.long)
+                    an.append(anno)
+                }
+                
+            
+            
+            DispatchQueue.main.async {
+                self.mapview.addAnnotations(an)
+            }
+        }
+    })
         
     }
     
@@ -100,7 +120,26 @@ extension MapSceneViewController {
         mapview.addGestureRecognizer(pressure)
     }
     
+    func fetchDue(fetchedResultsController :  NSFetchedResultsController<NSFetchRequestResult>?, completion:()->())
+    {
+      fetchedResultsController?.delegate = self as? NSFetchedResultsControllerDelegate
+        
+        search()
+        completion()
+        
+    }
     
-    
+    func search(){
+        if let fetchC = fetchedResultsController{
+            do{
+                try fetchC.performFetch()
+            }
+            catch let e as NSError{
+                print("error in \(e)")
+                
+            }
+        }
+        
+    }
     
 }
