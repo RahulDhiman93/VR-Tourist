@@ -30,7 +30,7 @@
         <!--Virtual Tourist-->
         <scene sceneID="NeU-lj-e8j">
             <objects>
-                <viewController id="5kM-cc-9Qi" sceneMemberID="viewController">
+                <viewController id="5kM-cc-9Qi" customClass="MapSceneViewController" customModule="VRTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wm1-4e-wf0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,6 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="OTM-tO-riy"/>
                     <connections>
+                        <outlet property="mapview" destination="Va5-Lk-3A5" id="N5C-hJ-DTO"/>
                         <segue destination="hXY-jc-V3d" kind="show" identifier="SG" id="b2D-lo-UZ9"/>
                     </connections>
                 </viewController>
@@ -69,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="192"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bP-jN-qyj">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="136" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="od2-Po-gaz">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="slq-Mx-Baw">

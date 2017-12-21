@@ -16,6 +16,8 @@
 		08D595861FE97B9B001E5737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08D595841FE97B9B001E5737 /* LaunchScreen.storyboard */; };
 		08D595911FE97B9C001E5737 /* VRTouristTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D595901FE97B9C001E5737 /* VRTouristTests.swift */; };
 		08D5959C1FE97B9C001E5737 /* VRTouristUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D5959B1FE97B9C001E5737 /* VRTouristUITests.swift */; };
+		08F47F411FEC10DB00BA3ABA /* FetchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F47F401FEC10DB00BA3ABA /* FetchViewController.swift */; };
+		08F47F431FEC113A00BA3ABA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F47F421FEC113A00BA3ABA /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		08D595971FE97B9C001E5737 /* VRTouristUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VRTouristUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D5959B1FE97B9C001E5737 /* VRTouristUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRTouristUITests.swift; sourceTree = "<group>"; };
 		08D5959D1FE97B9C001E5737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08F47F401FEC10DB00BA3ABA /* FetchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchViewController.swift; sourceTree = "<group>"; };
+		08F47F421FEC113A00BA3ABA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		089235541FEACC570091E8E3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				08F47F421FEC113A00BA3ABA /* CoreDataStack.swift */,
 				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 			);
 			path = model;
@@ -89,6 +94,8 @@
 		089235571FEACC7B0091E8E3 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */,
+				08F47F401FEC10DB00BA3ABA /* FetchViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -138,7 +145,6 @@
 				08D5957B1FE97B9B001E5737 /* AppDelegate.swift */,
 				08D5957F1FE97B9B001E5737 /* Main.storyboard */,
 				08D595821FE97B9B001E5737 /* Assets.xcassets */,
-				089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */,
 				08D595841FE97B9B001E5737 /* LaunchScreen.storyboard */,
 				08D595871FE97B9B001E5737 /* Info.plist */,
 			);
@@ -300,7 +306,9 @@
 				089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */,
 				08D5957C1FE97B9B001E5737 /* AppDelegate.swift in Sources */,
 				0892355E1FEACE640091E8E3 /* network.swift in Sources */,
+				08F47F431FEC113A00BA3ABA /* CoreDataStack.swift in Sources */,
 				0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */,
+				08F47F411FEC10DB00BA3ABA /* FetchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
