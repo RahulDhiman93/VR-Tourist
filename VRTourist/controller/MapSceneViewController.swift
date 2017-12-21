@@ -15,20 +15,21 @@ let delegate = UIApplication.shared.delegate as! AppDelegate
 class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet var mapview: MKMapView!
+    
     let stack = delegate.stack
     
     var fetchedResultsController : NSFetchedResultsController<NSFetchRequestResult>?
     
-    let fetchedResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
+    let fetchedResultt = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.setup()
-        //self.loadData()
+        self.setUp()
+        self.loadData()
         
     }
     
-    func PinIT(_ pressure : UILongPressGestureRecognizer)
+    @objc func PinIT(_ pressure : UILongPressGestureRecognizer)
     {
         if pressure.state == UIGestureRecognizerState.began
         {
@@ -49,17 +50,57 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
         var ppoint: NSManagedObject!
         let pp1 = NSPredicate(format: "lat = %@",argumentArray:[(view.annotation?.coordinate.latitude)!])
         let pp2 = NSPredicate(format: "long = %@",argumentArray:[(view.annotation?.coordinate.longitude)!])
-        let FetchedResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
+        let FetchedResult2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Pin")
         let PredicateR = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [pp1,pp2])
         
-        FetchedResult.predicate = PredicateR
-        FetchedResult.sortDescriptors = [NSSortDescriptor(key: "lat",ascending: true)]
+        FetchedResult2.predicate = PredicateR
+        FetchedResult2.sortDescriptors = [NSSortDescriptor(key: "lat",ascending: true)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: FetchedResult2, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+      /*  fetchDue(fetchedResultsController: fetchedResultsController, completion: {
+            
+     
+            let object = fetchedResultsController?.fetchedObjects as! [NSManagedObject]
+            ppoint = object[0]
+        })*/
+        
+        mapView.deselectAnnotation(view.annotation, animated: false)
+        performSegue(withIdentifier: "SG", sender: ppoint)
+    }
+    
+    override func prepare(for segue:UIStoryboardSegue, sender: Any?){
+        
+      //  let sg = segue.destination as! FlickerViewController
+        // sg.point = sender as! PIN
+        
+        
+    }
+    
+}
+
+extension MapSceneViewController {
+   
+    func loadData(){
+        fetchedResultt.sortDescriptors = [NSSortDescriptor(key: "lat", ascending: false),NSSortDescriptor(key: "long",ascending: true)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedResultt, managedObjectContext: stack.context, sectionNameKeyPath:nil, cacheName: nil)
         
         
         
     }
     
-
     
-
+    func setUp(){
+        mapview.delegate = self
+        let pressure = UILongPressGestureRecognizer(target:self, action: #selector(PinIT(_:)))
+        pressure.delegate = self
+        pressure.minimumPressDuration = 0.7
+        pressure.allowableMovement = 1
+        mapview.addGestureRecognizer(pressure)
+    }
+    
+    
+    
+    
 }
