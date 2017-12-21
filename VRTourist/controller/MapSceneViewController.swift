@@ -37,7 +37,7 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
             let cc = mapview.convert(location, toCoordinateFrom: mapview)
             let Ann = MKPointAnnotation()
             Ann.coordinate = cc
-           // let _ = Pin(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
+          //  let _ = Pin(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
             try! stack.saveContext()
             loadData()
             
@@ -87,6 +87,8 @@ extension MapSceneViewController {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchedResultt, managedObjectContext: stack.context, sectionNameKeyPath:nil, cacheName: nil)
         
         fetchDue(fetchedResultsController: fetchedResultsController, completion: {
+            
+           // let p:[Pin] = fetchedResultsController?.fetchedObjects as! [Pin]
             
             let p:[Pin] = fetchedResultsController?.fetchedObjects as! [Pin]
             
