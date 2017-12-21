@@ -11,6 +11,10 @@
 		086B10251FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */; };
 		086B10271FEC34050013CDF4 /* Images+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */; };
 		086B10291FEC34310013CDF4 /* Images+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */; };
+		086B102F1FEC3AC90013CDF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 086B102E1FEC3AC90013CDF4 /* Info.plist */; };
+		086B10311FEC3C410013CDF4 /* FlickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10301FEC3C410013CDF4 /* FlickerViewController.swift */; };
+		086B10331FEC3CB40013CDF4 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */; };
+		086B10351FEC45A00013CDF4 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */; };
 		089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */; };
 		0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */; };
 		0892355E1FEACE640091E8E3 /* network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0892355D1FEACE640091E8E3 /* network.swift */; };
@@ -46,6 +50,10 @@
 		086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataClass.swift"; sourceTree = "<group>"; };
 		086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Images+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		086B102E1FEC3AC90013CDF4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		086B10301FEC3C410013CDF4 /* FlickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerViewController.swift; sourceTree = "<group>"; };
+		086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewController.swift; sourceTree = "<group>"; };
 		0892355A1FEACCBD0091E8E3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0892355D1FEACE640091E8E3 /* network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = network.swift; sourceTree = "<group>"; };
@@ -54,7 +62,6 @@
 		08D595801FE97B9B001E5737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08D595821FE97B9B001E5737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08D595851FE97B9B001E5737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		08D595871FE97B9B001E5737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D5958C1FE97B9C001E5737 /* VRTouristTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VRTouristTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08D595901FE97B9C001E5737 /* VRTouristTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRTouristTests.swift; sourceTree = "<group>"; };
 		08D595921FE97B9C001E5737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +105,6 @@
 				086B10241FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift */,
 				086B10261FEC34050013CDF4 /* Images+CoreDataClass.swift */,
 				086B10281FEC34310013CDF4 /* Images+CoreDataProperties.swift */,
-				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -108,16 +114,11 @@
 			children = (
 				089235521FEACC2D0091E8E3 /* MapSceneViewController.swift */,
 				08F47F401FEC10DB00BA3ABA /* FetchViewController.swift */,
+				086B10301FEC3C410013CDF4 /* FlickerViewController.swift */,
+				086B10321FEC3CB40013CDF4 /* CoreDataViewController.swift */,
+				086B10341FEC45A00013CDF4 /* CollectionViewCell.swift */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		089235581FEACC850091E8E3 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				08D5957A1FE97B9B001E5737 /* VRTourist */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		0892355C1FEACE300091E8E3 /* Networking */ = {
@@ -131,8 +132,8 @@
 		08D5956F1FE97B9B001E5737 = {
 			isa = PBXGroup;
 			children = (
+				08D5957A1FE97B9B001E5737 /* VRTourist */,
 				0892355C1FEACE300091E8E3 /* Networking */,
-				089235581FEACC850091E8E3 /* view */,
 				089235571FEACC7B0091E8E3 /* controller */,
 				089235541FEACC570091E8E3 /* model */,
 				08D5958F1FE97B9C001E5737 /* VRTouristTests */,
@@ -158,7 +159,8 @@
 				08D5957F1FE97B9B001E5737 /* Main.storyboard */,
 				08D595821FE97B9B001E5737 /* Assets.xcassets */,
 				08D595841FE97B9B001E5737 /* LaunchScreen.storyboard */,
-				08D595871FE97B9B001E5737 /* Info.plist */,
+				086B102E1FEC3AC90013CDF4 /* Info.plist */,
+				089235591FEACCBD0091E8E3 /* Model.xcdatamodeld */,
 			);
 			path = VRTourist;
 			sourceTree = "<group>";
@@ -288,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086B102F1FEC3AC90013CDF4 /* Info.plist in Resources */,
 				08D595861FE97B9B001E5737 /* LaunchScreen.storyboard in Resources */,
 				08D595831FE97B9B001E5737 /* Assets.xcassets in Resources */,
 				08D595811FE97B9B001E5737 /* Main.storyboard in Resources */,
@@ -319,10 +322,13 @@
 				089235531FEACC2D0091E8E3 /* MapSceneViewController.swift in Sources */,
 				086B10251FEC30DA0013CDF4 /* Pin+CoreDataProperties.swift in Sources */,
 				08D5957C1FE97B9B001E5737 /* AppDelegate.swift in Sources */,
+				086B10311FEC3C410013CDF4 /* FlickerViewController.swift in Sources */,
 				086B10231FEC30B80013CDF4 /* Pin+CoreDataClass.swift in Sources */,
 				0892355E1FEACE640091E8E3 /* network.swift in Sources */,
 				08F47F431FEC113A00BA3ABA /* CoreDataStack.swift in Sources */,
+				086B10351FEC45A00013CDF4 /* CollectionViewCell.swift in Sources */,
 				086B10291FEC34310013CDF4 /* Images+CoreDataProperties.swift in Sources */,
+				086B10331FEC3CB40013CDF4 /* CoreDataViewController.swift in Sources */,
 				0892355B1FEACCBD0091E8E3 /* Model.xcdatamodeld in Sources */,
 				08F47F411FEC10DB00BA3ABA /* FetchViewController.swift in Sources */,
 			);

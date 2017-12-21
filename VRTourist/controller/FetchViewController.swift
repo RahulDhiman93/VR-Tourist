@@ -11,11 +11,25 @@ import CoreData
 
 class FetchViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+  
+    func fetchDue(fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?, completion:()->())
+    {
+        fetchedResultsController?.delegate = self as? NSFetchedResultsControllerDelegate
+        search()
+        completion()
     }
+}
 
-
+extension FetchViewController{
+    func search(){
+        if let fc = fetchedResultsController {
+            do{
+                try fc.performFetch()
+            }catch let e as NSError{
+                print("Error in \(e)")
+            }
+            
+        }
+    }
 }

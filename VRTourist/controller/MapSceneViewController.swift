@@ -37,7 +37,7 @@ class MapSceneViewController: UIViewController, MKMapViewDelegate, UIGestureReco
             let cc = mapview.convert(location, toCoordinateFrom: mapview)
             let Ann = MKPointAnnotation()
             Ann.coordinate = cc
-          //  let _ = Pin(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
+            let _ = Pin(latitude: cc.latitude, longitude: cc.longitude, context: (fetchedResultsController?.managedObjectContext)!)
             try! stack.saveContext()
             loadData()
             
@@ -98,7 +98,7 @@ extension MapSceneViewController {
                 for a in p
                 {
                     let anno = MKPointAnnotation()
-                    //  anno.coordinate = CLLocationCoordinate2D(latitude: a.lat, longtitude: a.long)
+                    anno.coordinate = CLLocationCoordinate2D(latitude: a.lat, longitude: a.long)
                     an.append(anno)
                 }
                 
