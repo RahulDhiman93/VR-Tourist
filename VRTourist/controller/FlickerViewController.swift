@@ -77,11 +77,26 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
         }
     }
     
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("CHECK THIS OUT")
+        print((pp.image?.count)!)
+        
+        return (pp.image?.count)!
+       
+    }
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        print("In collection baby")
+     //   print("In collection baby HCEKC OUT")
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         
+        
+       // cell.FImage.alpha = 0.2
         cell.ind.isHidden = false
         cell.ind.startAnimating()
         cell.FImage.image = nil
@@ -105,6 +120,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
             cell.FImage.image = UIImage(data:(obj?.image)! as Data)
             cell.ind.stopAnimating()
             cell.ind.isHidden = true
+            
         }
         return cell
     }
@@ -113,22 +129,26 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     func  getUrls(_ completion: @escaping (_ done: Bool, _ error: String?) -> Void) {
         let flicker  = FlickerImage()
         
+        //   print("GETTING URL")
         
         flicker.get(latitude: self.pp.latitude, longitude: self.pp.longitude, page: Int32(arc4random_uniform(50)), completion: {
             error , urlarray in
             if error != nil
             {
+               // print("NAHH")
                 completion(false,error)
                 return
             }
             if urlarray?.count == 0
             {
+               // print("DONT KNOW")
                 completion(false,"No Data Found")
                 return
             }
             
             for i in urlarray!
             {
+                //print("WELL HELLO THERE:")
                 let im = Images(image: nil, point: self.pp, context: (self.fetchedResultsController?.managedObjectContext)!)
                 im.url = i
                 
@@ -159,7 +179,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
     
     func setUp()
     {   mapScene.isUserInteractionEnabled = false
-        self.NC.isEnabled = true
+        self.NC.isEnabled = false
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
        let cords2d = CLLocationCoordinate2D(latitude: (self.pp?.latitude)!, longitude: (self.pp?.longitude)!)

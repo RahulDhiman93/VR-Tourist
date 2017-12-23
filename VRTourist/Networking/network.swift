@@ -12,29 +12,37 @@ import UIKit
 struct FlickerImage
 {
     
-    let scheme = "https"
-    let host = "api.flickr.com"
-    let path = "/services/rest"
-    
-    
     func get(latitude:Double, longitude:Double,page:Int32, completion:@escaping (_ error:String?,_ data:[String]?)->())
     {
         
         let url = "https://api.flickr.com/services/rest?page=\(page)&method=flickr.photos.search&format=json&api_key=a70bee7297e31fa3487ef2de75121400&bbox=\(bbox(Lat:latitude, Long:longitude))&extras=url_m&nojsoncallback=1"
+        
+      //  print("URL IS  : ")
+       // print(url)
         
         
         let session = URLSession.shared
         
         let task = session.dataTask(with: URL(string: url)!){data,response,error in
             if error != nil {
+              //  print("erroe SIR")
                 completion(error?.localizedDescription, nil)
                 return
             }
             
+           // print("ABOVE DATA")
+            
             let Data = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
             
-            if let pics = Data["photos"] as? [String:Any], let array = pics["photos"] as? [[String:Any]]
+            
+            //print(Data)
+
+            //print("UTTE DATTA SI")
+            
+            if let pics = Data["photos"] as? [String:Any] ,let array = pics["photo"] as? [[String:Any]]
             {
+                
+              //  print("DOWNLOADING")
                 var count = array.count - 1
                 
                 var urlarray = [String]()
@@ -53,6 +61,9 @@ struct FlickerImage
                     
                 }
                 completion(nil,urlarray)
+            }
+            else{
+                //print("TUHADE TO NE HONNA")
             }
         }
         task.resume()

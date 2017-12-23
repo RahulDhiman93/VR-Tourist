@@ -120,7 +120,7 @@ extension MapSceneViewController {
         mapview.delegate = self
         let pressure = UILongPressGestureRecognizer(target: self, action: #selector(pinIT(_:)))
         pressure.delegate = self
-        pressure.minimumPressDuration = 0.8
+        pressure.minimumPressDuration = 0.5
         pressure.allowableMovement = 1
         mapview.addGestureRecognizer(pressure)
     }
