@@ -131,7 +131,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
         
         //   print("GETTING URL")
         
-        flicker.get(latitude: self.pp.latitude, longitude: self.pp.longitude, page: Int32(arc4random_uniform(50)), completion: {
+        flicker.get(latitude: self.pp.latitude, longitude: self.pp.longitude, page: Int32(min(pp.image!.count,Int(4000/20))), completion: {
             error , urlarray in
             if error != nil
             {
@@ -160,7 +160,7 @@ class FlickerViewController: CoreDataViewController,MKMapViewDelegate,UICollecti
         
         
     }
-    
+     
     func alert(error :String )
     {  DispatchQueue.main.async {
         

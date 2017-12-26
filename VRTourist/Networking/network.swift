@@ -55,8 +55,9 @@ struct FlickerImage
                 while count > 0 {
                     
                     count-=1
+                    
                     let obj = array[count]
-                    var url = obj["url_m"] as! String
+                    let url = obj["url_m"] as! String
                     urlarray.append(url)
                     
                 }
